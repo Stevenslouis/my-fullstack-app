@@ -7,6 +7,8 @@ const quizRoutes = require('./routes/quiz-route')
 const authRoutes = require('./routes/auth-route')
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+
+connectToDB()
 app.use(cors({
   origin: process.env.CLIENT_URL,
   credentials: true,
@@ -14,7 +16,14 @@ app.use(cors({
 }));
 
 
-connectToDB()
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK',
+    db: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected'
+  });
+})
+
+
 
 app.use(express.json())
 
