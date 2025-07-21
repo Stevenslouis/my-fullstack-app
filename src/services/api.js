@@ -6,7 +6,8 @@ const isLoggedIn = async () => {
   const response = await fetch(`${API_URL}/api/auth/check`, {
     method: 'GET',
     headers: {
-    }
+    },
+    credentials: 'include',
   });
   return response.json();
 };
@@ -17,7 +18,8 @@ const fetchQuizzes = async () => {
     method: 'GET',
     headers: {
 
-    }
+    },
+    credentials: 'include',
   });
   return response.json();
 };
@@ -30,6 +32,8 @@ const createQuiz = async (quiz) => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer` // Attach token
     },
+    credentials: 'include',
+
     body: JSON.stringify(quiz)
   }
   );
@@ -63,6 +67,7 @@ const registerUser = async (loginInfo) => {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify(loginInfo)
 
   })
@@ -77,6 +82,7 @@ const deleteQuiz = async (quizId) => {
     headers: {
       'Content-Type': 'application/json'
     },
+    credentials: 'include',
     body: JSON.stringify({ _id: quizId })
 
   })
