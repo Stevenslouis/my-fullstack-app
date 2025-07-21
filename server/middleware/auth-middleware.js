@@ -24,7 +24,7 @@ const authMiddleware = async(req, res, next) => {
         if (!user) {
             res.clearCookie('access_token', {
                 httpOnly: true,
-                secure: false, // true in prod, false in dev
+                secure: true, // true in prod, false in dev
                 sameSite: 'None',
             });
             return res.status(401).json({
