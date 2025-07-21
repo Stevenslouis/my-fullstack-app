@@ -1,6 +1,9 @@
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+
 const isLoggedIn = async () => {
-  const response = await fetch('/api/auth/check', {
+  const response = await fetch(`${API_URL}/api/auth/check`, {
     method: 'GET',
     headers: {
     }
@@ -10,7 +13,7 @@ const isLoggedIn = async () => {
 
 const fetchQuizzes = async () => {
 
-  const response = await fetch('/api/quizzes/get', {
+  const response = await fetch(`${API_URL}/api/quizzes/get`, {
     method: 'GET',
     headers: {
 
@@ -20,7 +23,7 @@ const fetchQuizzes = async () => {
 };
 
 const createQuiz = async (quiz) => {
-  const response = await fetch('/api/quizzes/add', {
+  const response = await fetch(`${API_URL}/api/quizzes/add`, {
 
     method: 'POST',
     headers: {
@@ -41,7 +44,7 @@ const createQuiz = async (quiz) => {
 
 const loginUser = async (loginInfo) => {
 
-  const response = await fetch('/api/auth/login', {
+  const response = await fetch(`${API_URL}/api/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -55,7 +58,7 @@ const loginUser = async (loginInfo) => {
 
 const registerUser = async (loginInfo) => {
 
-  const response = await fetch('/api/auth/register', {
+  const response = await fetch(`${API_URL}/api/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -69,7 +72,7 @@ const registerUser = async (loginInfo) => {
 
 const deleteQuiz = async (quizId) => {
 
-  const response = await fetch('/api/quizzes/delete', {
+  const response = await fetch(`${API_URL}/api/quizzes/delete`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
@@ -84,7 +87,7 @@ const deleteQuiz = async (quizId) => {
 
 const logOutUser = async () => {
 
-  const response = await fetch('/api/auth/logout', {
+  const response = await fetch(`${API_URL}/api/auth/logout`, {
     method: 'POST',
     credentials: 'include'
   });
@@ -94,7 +97,7 @@ const logOutUser = async () => {
 
 const sendPasswordResetLink = async (email) => {
 
-  const response = await fetch('/api/auth/send-reset-link', {
+  const response = await fetch(`${API_URL}/api/auth/send-reset-link`, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -111,7 +114,7 @@ const sendPasswordResetLink = async (email) => {
 
 const changePassword = async (token, password) => {
 
-  const response = await fetch('/api/auth/reset-password', {
+  const response = await fetch(`${API_URL}/api/auth/reset-password`, {
     method: 'PUT',
     credentials: 'include',
     headers: {
@@ -129,7 +132,7 @@ const changePassword = async (token, password) => {
 
 const resetTokenValidator = async (token) => {
 
-  const response = await fetch('/api/auth/check-password-reset-token', {
+  const response = await fetch(`${API_URL}/api/auth/check-password-reset-token`, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -146,7 +149,7 @@ const resetTokenValidator = async (token) => {
 
 const updateQuiz = async (data) => {
 
-  const response = await fetch('/api/quizzes/update', {
+  const response = await fetch(`${API_URL}/api/quizzes/update`, {
     method: 'PATCH',
     credentials: 'include',
     headers: {
@@ -161,7 +164,7 @@ const updateQuiz = async (data) => {
 
 const uploadQuiz = async (data) => {
 
-  const response = await fetch('/api/quizzes/upload', {
+  const response = await fetch(`${API_URL}/api/quizzes/upload`, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -175,7 +178,7 @@ const uploadQuiz = async (data) => {
 };
 const fetchQuizHistory = async (quizId) => {
 
-  const response = await fetch('/api/quizzes/history', {
+  const response = await fetch(`${API_URL}/api/quizzes/history`, {
     method: 'POST',
     credentials: 'include',
     headers: {

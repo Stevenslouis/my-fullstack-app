@@ -161,11 +161,11 @@ function CreateQuizMenu({ isOpen, onClose}) {
                 await refreshQuizzes()
                 onClose()
                 } else {
-                    setErrorMsg(response.message)
+                setErrorMsg("Could not connect to server, quiz not added. ")
                 }
             } catch (err) {
 
-                setErrorMsg(err.message)
+                setErrorMsg("Could not connect to server, quiz not added. ")
             } finally {
             }
         };
