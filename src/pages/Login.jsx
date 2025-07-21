@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { loginUser, isLoggedIn } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import '../css/login.css'
+import '../css/Login.css'
 import { validator } from 'validator';
 
 function Login() {
