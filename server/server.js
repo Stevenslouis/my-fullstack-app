@@ -18,9 +18,7 @@ app.use(cors({
 
 app.get('/health', (req, res) => {
   res.status(200).json({ 
-    status: 'OK',
-    db: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected'
-  });
+    status: 'OK'  });
 })
 
 
