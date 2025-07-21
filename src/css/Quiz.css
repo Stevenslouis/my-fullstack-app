@@ -1,0 +1,125 @@
+.background-quiz{
+    background: rgb(32, 31, 31);  
+box-sizing: border-box;
+  width: 100%;
+  min-height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: grey;
+    border-radius: 20px;
+    min-width: 350px;
+    max-width: 440px;
+    min-height: 300px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    /* The actual shadow */
+    backdrop-filter: blur(6px);
+
+
+}
+
+.num-answers {
+    margin-bottom: 10px;
+    font-size: small;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.option {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.option-row{
+    width: 100%;
+}
+
+
+.text-label {
+    background-color: rgb(118, 112, 112);
+    cursor: pointer;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: block;
+    transition: all 0.2s;
+    width: 100
+}
+
+.text-label:hover {
+    background-color: rgb(182, 177, 177)
+}
+
+/* Style for checked state */
+.option:checked+.text-label {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #38c06c;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+
+}
+
+.bottom-buttons {
+    box-sizing: border-box;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* 👈 pushes buttons to bottom of form */
+}
+
+.question {
+    font-weight: bold;
+
+    margin: 20px;
+    font-size: large;
+    word-wrap: break-word;
+    /* Break long words */
+    overflow-wrap: break-word;
+    /* Modern alternative */
+    white-space: normal;
+    /* Override any nowrap */
+}
+
+.question-label {
+
+
+    font-size: large;
+    word-wrap: break-word;
+    /* Break long words */
+    overflow-wrap: break-word;
+    /* Modern alternative */
+    white-space: normal;
+    /* Override any nowrap */
+}
+
+.stretch{
+
+    justify-content: space-between;
+}

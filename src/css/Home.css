@@ -1,0 +1,85 @@
+.background-home {
+  background: rgb(45, 44, 44);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+.top {
+  align-items: flex-start;
+}
+
+.floating-plus-btn {
+  padding: none;
+  position: fixed;
+  margin: none;
+  bottom: 50px;
+  /* distance from bottom */
+  right: 50px;
+  /* distance from right */
+  width: 60px;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  background: url('../assets/add-btn.png') no-repeat center center;
+  background-size: auto;
+  background-color: #38c06c;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+
+.floating-plus-btn:hover {
+  background-color: #258b48;
+}
+
+.quizzes-list {
+
+  width: 100%;
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.quiz-row {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(118, 112, 112);
+}
+
+.quiz-row:hover {
+  background-color: rgb(182, 177, 177)
+}
+
+.quiz-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.quiz-options {
+  opacity: 0;
+  display: flex;
+  gap: 5px;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.quiz-row:hover .quiz-options {
+  opacity: 1;
+  visibility: visible;
+}

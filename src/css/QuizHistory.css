@@ -1,0 +1,39 @@
+.history-entry{
+    margin-bottom: 10px;
+}
+
+.left{
+    padding-left: 20px;
+}
+
+.red{
+    color: red
+}
+
+.yellow{
+    color: rgb(236, 221, 12)
+}
+.history-quiz-display {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(118, 112, 112);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.history-entry-btn:hover {
+    background-color: rgb(182, 177, 177)
+
+}
+
+.specifc-quiz-question:hover{
+    background-color: rgb(157, 145, 145)
+
+}
+
+.title{
+    margin-bottom: 20px;
+}

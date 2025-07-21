@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+.logout-btn {
+    width: 40px;
+    /* set your image width */
+    aspect-ratio: 1;
+    background: url('../assets/logout-btn.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+.home-btn {
+    width: 40px;
+    /* set your image width */
+    aspect-ratio: 1;
+    background: url('../assets/home-btn.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
