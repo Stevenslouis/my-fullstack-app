@@ -262,7 +262,7 @@ const sendResetLink = async (req, res) => {
         });
         await resetToken.save();
 
-        const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+        const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${token}`;
 
         sentStatus = await sendResetEmail(user.email, resetLink)
 
