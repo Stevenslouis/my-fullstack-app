@@ -11,7 +11,7 @@ const { sendResetEmail } = require('../helpers/link-sender');
 const registerUser = async (req, res) => {
 
     try {
-       
+
         // get user info from body
 
         const { email, emailCheck, password } = req.body
@@ -94,9 +94,9 @@ const updatePassword = async (req, res) => {
 
         const user = await User.findOneAndUpdate({ _id: userId }, { $set: { password: hashedPassword } },       // set only the "name" field
             { new: true })
-        
+
         await ResetToken.findByIdAndDelete(tokenObject._id)
-     
+
         if (user) {
             return res.status(200).json({
                 success: true,
@@ -108,7 +108,7 @@ const updatePassword = async (req, res) => {
                 message: "Unable to update password, try again later"
             })
         }
-    } catch (err) {        
+    } catch (err) {
         return res.status(500).json({
             success: false,
             message: "Unable to update password, try again later"
@@ -147,10 +147,11 @@ const loginUser = async (req, res) => {
         })
 
         res.cookie('access_token', accessToken, {
+            domain: '.stevens-quiz-app.com',
             httpOnly: true,
             secure: true, // Set to true in production (HTTPS)
-            sameSite: 'None',
-            maxAge: 3600000 
+            sameSite: 'lax',
+            maxAge: 3600000
         });
         res.status(200).json({
             success: true,
@@ -223,9 +224,10 @@ const checkResetToken = async (req, res) => {
 
 const logOutUser = async (req, res) => {
     res.clearCookie('access_token', {
+        domain: '.stevens-quiz-app.com',
         httpOnly: true,
         secure: true, // true in prod, false in dev
-        sameSite: 'None',
+        sameSite: 'lax',
     });
     res.status(200).json({ success: true, message: 'Logged out successfully' });
 }
@@ -281,12 +283,12 @@ const sendResetLink = async (req, res) => {
 
 
 
-module.exports = { 
-    loginUser, 
-    registerUser, 
+module.exports = {
+    loginUser,
+    registerUser,
     sendResetLink,
-    checkLogin, 
-    logOutUser, 
-    checkResetToken, 
-    updatePassword 
+    checkLogin,
+    logOutUser,
+    checkResetToken,
+    updatePassword
 }

@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/User');
 
 // Generate a 64-byte (512-bit) random string
-const authMiddleware = async(req, res, next) => {
+const authMiddleware = async (req, res, next) => {
 
     const token = req.cookies.access_token;
 
@@ -20,12 +20,13 @@ const authMiddleware = async(req, res, next) => {
         req.userInfo = decodedTokenInfo
 
         const user = await User.findById(req.userInfo.userId);
-        
+
         if (!user) {
             res.clearCookie('access_token', {
+                domain: '.stevens-quiz-app.com',
                 httpOnly: true,
                 secure: true, // true in prod, false in dev
-                sameSite: 'None',
+                sameSite: 'lax',
             });
             return res.status(401).json({
                 success: false,
