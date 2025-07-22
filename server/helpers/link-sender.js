@@ -17,9 +17,9 @@ const sendResetEmail = async (email, resetLink) => {
     to: email,
     subject: 'Password Reset Request',
     html: `
-      <p>You requested a password reset. Click the link below:</p>
+      <p>You requested a password reset on stevens-quiz-app. Click the link below:</p>
       <a href="${resetLink}">Reset Password</a>
-      <p>This link expires in 1 hour.</p>
+      <p>This link expires in 15 minutes.</p>
     `,
   };
 
