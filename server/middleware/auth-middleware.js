@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/User');
 
-// Generate a 64-byte (512-bit) random string
+
 const authMiddleware = async (req, res, next) => {
 
     const token = req.cookies.access_token;
@@ -13,8 +13,9 @@ const authMiddleware = async (req, res, next) => {
         })
     }
 
-    //decode this token 
     try {
+        // do a check to see if user still exists during the session, incase account has been deleted
+            //decode this token 
         const decodedTokenInfo = jwt.verify(token, process.env.JWT_SECRET_KEY);
         // puts decrypted user id in req.userinfo for future use. 
         req.userInfo = decodedTokenInfo
@@ -34,6 +35,7 @@ const authMiddleware = async (req, res, next) => {
             });
         }
 
+        //also log them out if they have a change password operation in progress
         next()
     } catch (err) {
         return res.status(500).json({

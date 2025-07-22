@@ -38,7 +38,8 @@ function ForgotPassword() {
 
                 ) : (<div className='login-content'>
 
-                    <div>Enter Email To Send Password Reset Link</div>
+                    <div>Enter email to send password reset link</div>
+                    <div>Link will expire in 15 minutes once sent</div>                   
                     <label>
                         <div className='login-input-label'>Email</div>
                         <input type="text" className='login-input' required onChange={(e) => setEmail(e.target.value)}></input>

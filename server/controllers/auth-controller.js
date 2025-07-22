@@ -72,9 +72,7 @@ const registerUser = async (req, res) => {
 }
 
 const updatePassword = async (req, res) => {
-
     try {
-
         // get the token and new password from body
 
         const token = req.body._token
@@ -156,8 +154,6 @@ const loginUser = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "logged in successfully",
-            accessToken,
-            userID: user._id
         })
 
     } catch (err) {

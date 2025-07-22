@@ -7,6 +7,8 @@ import Register from './pages/Register';
 import NavBar from './components/NavBar';
 import ForgotPassword from './pages/Forgot-Password'
 import ResetPassword from './pages/Reset-Password'
+import { Navigate } from 'react-router-dom';
+
 import './css/App.css'
 
 function AppWrapper() {
@@ -28,6 +30,7 @@ function App() {
         <div className="page-content">
 
           <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/reset-password" element={<ResetPassword />} />
